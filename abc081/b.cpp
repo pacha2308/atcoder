@@ -15,14 +15,7 @@ int rad2(int n) {
     return counter;
 }
 
-int main() {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-    }
-
+int search_min(int n, int* a) {
     int min = INF;
     for (int i = 0; i < n; i++) {
         int tmp = rad2(a[i]);
@@ -31,7 +24,18 @@ int main() {
         }
     }
 
-    cout << min << endl;
+    return min;
+}
+
+int main() {
+    int n;
+    cin >> n;
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+
+    cout << search_min(n, a) << endl;
 
     return 0;
 }
